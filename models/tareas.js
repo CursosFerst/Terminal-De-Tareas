@@ -52,7 +52,7 @@ class Tareas {
             const { desc, completadoEn } = tarea;
             
             if(completadoEn){
-                let idx = `${incremento++}`.blue;
+                let idx = `${incremento++}.`.blue;
                 console.log(`${ idx } ${ desc } :: ${'Completada'.green}`);
 
             }
@@ -69,7 +69,7 @@ class Tareas {
             const { desc, completadoEn } = tarea;
             
             if(!completadoEn){
-                let idx = `${sumador++}`.blue;
+                let idx = `${sumador++}.`.blue;
                 console.log(`${ idx } ${ desc } :: ${'Pendiente'.red}`);
 
             }
@@ -77,6 +77,13 @@ class Tareas {
         })
 
     }
+
+    borrarTarea ( id = '' ) {
+
+        //TODO: Creando el metodo de borrar 
+
+    };
+
 
     get getListadoArr( ){
 
