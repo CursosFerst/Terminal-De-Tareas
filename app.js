@@ -46,7 +46,7 @@ const main = async ( ) => {
                 break;
 
             case '4':
-                tareas.listaraPendientesCompletadas();
+                tareas.listarPendientesIncompletas();
                 break;
             
         
