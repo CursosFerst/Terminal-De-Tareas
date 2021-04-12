@@ -1,11 +1,11 @@
 require('colors');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 }    = require('uuid');
+const {guardarDataBase}   = require('./helpers/guardar_archivo');
 const { inquirerMenu,
         pausa,
-        leerInput} = require('./helpers/inquirer');
-
-const Tarea = require('./models/tarea');
-const Tareas = require('./models/tareas')
+        leerInput}      = require('./helpers/inquirer');
+const Tarea             = require('./models/tarea');
+const Tareas            = require('./models/tareas');
 
 
 
@@ -32,6 +32,7 @@ const main = async ( ) => {
         
         }
 
+        // guardarDataBase(tareas.getListadoArr);
 
         await pausa();
 
