@@ -19,7 +19,7 @@ const leerDB = ( ) => {
     
     // console.log(datajson);
 
-    return null;
+    return datajson;
 };
 
 module.exports = {

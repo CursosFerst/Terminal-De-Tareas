@@ -10,9 +10,12 @@ class Tareas {
 
     }
 
-    cargarTareasFromArray ( tarea = [] ) {
+    cargarTareasFromArray ( tareas ) {
 
-        this._listado[tarea.id] = tarea;
+        tareas.forEach(tarea => {
+            
+            this._listado[tarea.id] = tarea;
+        });
 
     }
 

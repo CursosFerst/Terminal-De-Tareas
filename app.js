@@ -18,7 +18,7 @@ const main = async ( ) => {
     
     if(tareasDB){
         
-        tareas.cargarTareasFromArray(//TODO: mandar un arreglo);
+        tareas.cargarTareasFromArray(tareasDB);
     }
     await pausa();
     
