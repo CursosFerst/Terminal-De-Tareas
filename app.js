@@ -1,6 +1,6 @@
 require('colors');
 const { v4: uuidv4 }    = require('uuid');
-const {guardarDataBase}   = require('./helpers/guardar_archivo');
+const { guardarDataBase, leerDB}   = require('./helpers/guardar_archivo');
 const { inquirerMenu,
         pausa,
         leerInput}      = require('./helpers/inquirer');
@@ -13,7 +13,15 @@ const main = async ( ) => {
 
     let opt = '';
     const tareas = new Tareas();
-
+    
+    const tareasDB = leerDB( );
+    
+    if(tareasDB){
+        
+        tareas.cargarTareasFromArray(//TODO: mandar un arreglo);
+    }
+    await pausa();
+    
     do{
         // Imprimiendo las opciones 
         opt = await inquirerMenu()
@@ -32,7 +40,7 @@ const main = async ( ) => {
         
         }
 
-        // guardarDataBase(tareas.getListadoArr);
+        guardarDataBase(tareas.getListadoArr);
 
         await pausa();
 

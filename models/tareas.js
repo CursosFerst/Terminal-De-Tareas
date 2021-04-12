@@ -9,6 +9,14 @@ class Tareas {
         this._listado = {};
 
     }
+
+    cargarTareasFromArray ( tarea = [] ) {
+
+        this._listado[tarea.id] = tarea;
+
+    }
+
+
     crearTarea (desc = ''){
 
         const tarea = new Tarea(desc);
@@ -24,6 +32,7 @@ class Tareas {
             const tarea = this._listado[key];
             listado.push( tarea );
         })
+
         return listado;
     }
 }

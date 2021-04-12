@@ -1,12 +1,28 @@
 const fs = require('fs');
-let i = 0;
+const archivo = `./db/data.json`;
 
 const guardarDataBase = ( data ) => {
 
-    i += 1;
-    const archivo = `./db/data-${i}.json`;
     fs.writeFileSync(archivo, JSON.stringify(data));
 
 } 
 
-module.exports = {guardarDataBase};
+const leerDB = ( ) => {
+
+    if(!fs.existsSync(archivo)){
+
+        return null;
+    }
+
+    const info = fs.readFileSync(archivo,{encoding:'utf-8'});
+    const datajson = JSON.parse(info)
+    
+    // console.log(datajson);
+
+    return null;
+};
+
+module.exports = {
+    guardarDataBase,
+    leerDB
+};
