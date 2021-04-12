@@ -10,31 +10,31 @@ const preguntas =
     choices: [ 
         {
             value: '1',
-            name:'1.Crear Tarea'
+            name:`${'1.'.blue}Crear Tarea`
         },
         {
             value: '2',
-            name: '2.Listar Tareas'
+            name: `${'2.'.blue}Listar Tareas`
         },
         {
             value: '3',
-            name:'3.Listar tareas completadas'
+            name:`${'3.'.blue}Listar tareas completadas`
         },
         {
             value: '4',
-            name:'4.Listar tareas pendientes'
+            name:`${'4.'.blue}Listar tareas pendientes`
         },
         {
             value: '5',
-            name:'5.Completar Tarea(s)'
+            name:`${'5.'.blue}Completar Tarea(s)`
         },
         {
             value: '6',
-            name:'6.Borrar Tarea'
+            name:`${'6.'.blue}Borrar Tarea`
         },
         {
             value: '0',
-            name:'0.Salir'
+            name:`${'0.'.blue}Salir`
         }
             ]
     }
@@ -71,8 +71,37 @@ const pausa = async ( ) =>{
     
 
 };
+// Hacemos que muestre la pregunta que estamos mandando
+const leerInput = async ( message ) => {
+
+    const   question = [
+        {
+
+            type: 'input',
+            name: 'desc',
+            message,
+            validate( value ){
+
+                if( value.length === 0){
+
+                    return 'Por favor ingrese un valor';
+                }
+                return true;
+            }
+        }
+    ]
+
+    const { desc } = await inquirer.prompt( question );
+    return desc;
+    
+}
+
+
+
+
 
 module.exports = {
     inquirerMenu,
-    pausa
+    pausa,
+    leerInput
 }
