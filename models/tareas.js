@@ -27,6 +27,28 @@ class Tareas {
 
     }
 
+    listadoCompleto (  ) {
+            
+        console.log();
+        this.getListadoArr.forEach( (tarea, ix) => {  
+            const idx = `${ix + 1}`.blue;
+            const { desc, completadoEn } = tarea;
+            const estado = ( completadoEn )
+                            ? 'Completada'.green
+                            : 'Pendiente'.red;
+
+            console.log(`${ idx } ${ desc } :: ${ estado }`);
+            
+        })
+    }
+
+    
+    listaraPendientesCompletadas ( completada = true) {
+        
+        
+        
+    }
+
     get getListadoArr( ){
 
         const listado = [ ];
@@ -38,6 +60,9 @@ class Tareas {
 
         return listado;
     }
+
+
+
 }
 
 module.exports = Tareas;

@@ -28,13 +28,25 @@ const main = async ( ) => {
 
         // Seleccion del resultado en el inquiererMenu()
         switch (opt) {
-            case '1':
-            const desc = await leerInput('Descripcion: ');
-            tareas.crearTarea( desc );
-                break;
-            case '2':
-                console.log(tareas._listado);
 
+            case '1':
+                const desc = await leerInput('Descripcion: ');
+                tareas.crearTarea( desc );
+
+                break;
+                
+            case '2':
+                // Imprimimos la lista completa de todo con sus respectivos colores
+                tareas.listadoCompleto();
+                //  Tareas._listado
+                break;
+
+            case '3':
+                tareas.listaraPendientesCompletadas();
+                break;
+
+            case '4':
+                tareas.listaraPendientesCompletadas();
                 break;
             
         
