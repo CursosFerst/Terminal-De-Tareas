@@ -3,7 +3,9 @@ const { v4: uuidv4 }    = require('uuid');
 const { guardarDataBase, leerDB}   = require('./helpers/guardar_archivo');
 const { inquirerMenu,
         pausa,
-        leerInput}      = require('./helpers/inquirer');
+        leerInput,
+        listadoTareasBorrar,
+        confirmar}      = require('./helpers/inquirer');
 const Tarea             = require('./models/tarea');
 const Tareas            = require('./models/tareas');
 
@@ -48,6 +50,22 @@ const main = async ( ) => {
             case '4':
                 tareas.listarPendientesIncompletas();
                 break;
+            
+            case '6':
+                const id = await listadoTareasBorrar(tareas.getListadoArr);
+                
+                if( id !== '0'){
+                    
+                    const ok = await confirmar('¿Esta seguro?');
+                    
+                    if( ok ){
+                        
+                        tareas.borrarTarea( id );
+                        console.log('Tarea Borrada');
+                    }
+
+                }
+                break
             
         
         }

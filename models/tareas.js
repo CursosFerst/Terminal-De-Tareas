@@ -61,7 +61,7 @@ class Tareas {
         
     }
 
-    listarPendientesIncompletas (pendiente = false) {
+    listarPendientesIncompletas(pendiente = false) {
         console.log();
         let sumador = 1;
 
@@ -80,8 +80,10 @@ class Tareas {
 
     borrarTarea ( id = '' ) {
 
-        //TODO: Creando el metodo de borrar 
+        if( this._listado[id] ){
 
+            delete this._listado[id]
+        }
     };
 
 
