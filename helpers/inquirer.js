@@ -173,6 +173,8 @@ const mostarListadoCheckList = async( tareas = [] ) => {
 
     const {ids} = await inquirer.prompt(pregunta);
     return ids;
+
+
 }
 
 
